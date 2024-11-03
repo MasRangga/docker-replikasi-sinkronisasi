@@ -1,0 +1,9 @@
+# Dockerfile-secondary
+FROM postgres:latest
+
+ENV POSTGRES_USER=rangga
+ENV POSTGRES_PASSWORD=rangga123
+ENV POSTGRES_DB=ranggadb
+
+COPY setup-secondary.sh /docker-entrypoint-initdb.d/setup-secondary.sh
+RUN chmod +x /docker-entrypoint-initdb.d/setup-secondary.sh
